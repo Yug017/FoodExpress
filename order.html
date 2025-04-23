@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Foodie Express - Order</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Place Your Order</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <form action="submit_order.html" method="POST">
+      <label>Name: <input type="text" name="name" required></label><br><br>
+      <label>Food Item:
+        <select name="food">
+          <option>Pizza</option>
+          <option>Burger</option>
+          <option>Soup</option>
+          <option>Pasta</option>
+        </select>
+      </label><br><br>
+      <label>Address: <textarea name="address" required></textarea></label><br><br>
+      <button type="submit">Order Now</button>
+    </form>
+  </main>
+  <footer>
+    <p>© 2025 Foodie Express</p>
+  </footer>
+</body>
+</html>

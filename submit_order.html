@@ -75,29 +75,42 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Order Confirmation</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="order.html">Order</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <h2>Thank You for Your Order!</h2>
-    <p>Your order details are as follows:</p>
-    <ul>
-      <li><strong>Name:</strong> John Doe</li>
-      <li><strong>Food Item:</strong> Pizza</li>
-      <li><strong>Address:</strong> 123 Foodie Street, Flavor Town</li>
-    </ul>
-    <p>We are preparing your delicious food and will deliver it shortly!</p>
-  </main>
-
-  <footer>
-    <p>© 2025 Foodie Express</p>
-  </footer>
-</body>
+    <header>
+      <h1>Order Confirmation</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html">Order</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+  
+    <main>
+      <h2>Thank You for Your Order!</h2>
+      <p>Your order details are as follows:</p>
+      <ul id="orderDetails"></ul>
+      <p>We are preparing your delicious food and will deliver it shortly!</p>
+    </main>
+  
+    <footer>
+      <p>© 2025 Foodie Express</p>
+    </footer>
+  
+    <script>
+      const data = JSON.parse(localStorage.getItem('orderData'));
+  
+      if (data) {
+        document.getElementById('orderDetails').innerHTML = `
+          <li><strong>Name:</strong> ${data.name}</li>
+          <li><strong>Food Item:</strong> ${data.food}</li>
+          <li><strong>Address:</strong> ${data.address}</li>
+        `;
+      } else {
+        document.getElementById('orderDetails').innerHTML = `
+          <li><strong>Error:</strong> No order data found.</li>
+        `;
+      }
+    </script>
+  </body>
+  </html>
 </html>

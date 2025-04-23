@@ -15,7 +15,7 @@
     </nav>
   </header>
   <main>
-    <form action="submit_order.html" method="POST">
+    <form id="orderForm">
       <label>Name: <input type="text" name="name" required></label><br><br>
       <label>Food Item:
         <select name="food">
@@ -32,5 +32,21 @@
   <footer>
     <p>© 2025 Foodie Express</p>
   </footer>
+  <script>
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+  
+      // Get values from form
+      const name = this.name.value;
+      const food = this.food.value;
+      const address = this.address.value;
+  
+      // Store in localStorage
+      localStorage.setItem('orderData', JSON.stringify({ name, food, address }));
+  
+      // Redirect to confirmation page
+      window.location.href = 'submit_order.html';
+    });
+  </script>
 </body>
 </html>
